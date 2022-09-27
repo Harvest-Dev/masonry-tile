@@ -1,0 +1,14 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html {
+  overflow-y: scroll;
+}
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 5px;
+}
