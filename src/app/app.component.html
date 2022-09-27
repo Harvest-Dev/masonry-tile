@@ -1,0 +1,22 @@
+<!-- Header -->
+<div>
+  <a mat-button href="http://mean-dev.info/masonry-grid-gallery/"
+    ><img
+      src="https://res.cloudinary.com/brewsninja/image/upload/v1533661064/MEAN_ntaaz4.png"
+      height="24px"
+  /></a>
+  <button mat-raised-button color="primary" (click)="addImage()">
+    ADD IMAGE
+  </button>
+</div>
+
+<!-- Gallery -->
+<app-grid-gallery
+  [images]="images"
+  [cols_xs]="1"
+  [cols_sm]="2"
+  [cols_md]="3"
+  [cols_lg]="4"
+  [cols_xl]="6"
+>
+</app-grid-gallery>
