@@ -1,14 +1,16 @@
 <mat-grid-list
+  #matGridList
   [cols]="cols"
   [rowHeight]="rowHeight"
   [gutterSize]="gutterSize + 'px'"
 >
   <mat-grid-tile *ngFor="let imageItem of images" #matGridTile>
-    <!-- Grid image item -->
+    <!-- Grid of items -->
     <app-grid-gallery-item
       [rowHeight]="rowHeight"
       [gutterSize]="gutterSize"
       [matGrid]="matGridTile"
+      (updateSize)="matGridList.ngAfterContentChecked()"
     >
       <img [src]="imageItem?.src" [alt]="imageItem?.alt" />
       <div>{{ imageItem?.alt }}</div>

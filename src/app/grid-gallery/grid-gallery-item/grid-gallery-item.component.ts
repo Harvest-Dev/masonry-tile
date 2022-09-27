@@ -2,7 +2,9 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { MatGridTile } from '@angular/material/grid-list';
@@ -17,6 +19,7 @@ export class GridGalleryItemComponent {
   @Input() rowHeight: number = 1;
   @Input() gutterSize: number = 1;
   @Input() matGrid!: MatGridTile;
+  @Output() updateSize = new EventEmitter<void>();
   @ViewChild('block') block!: ElementRef;
 
   constructor(private ref: ChangeDetectorRef) {}
@@ -34,13 +37,7 @@ export class GridGalleryItemComponent {
           this.block.nativeElement.offsetHeight /
             (this.rowHeight + this.gutterSize)
         );
-        this.ref.detectChanges();
-
-        console.log(
-          this.block.nativeElement.offsetHeight,
-          this.rowHeight + this.gutterSize,
-          this.matGrid.rowspan
-        );
+        this.updateSize.emit();
       }
     });
 
