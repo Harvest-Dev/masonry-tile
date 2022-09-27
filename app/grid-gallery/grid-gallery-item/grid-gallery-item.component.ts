@@ -1,11 +1,12 @@
 import {
+  ChangeDetectorRef,
   Component,
   ElementRef,
-  HostListener,
+  Host,
   Input,
   ViewChild,
-  Host,
 } from '@angular/core';
+import { MatGridTile } from '@angular/material';
 import { Image } from '../../image.model';
 
 @Component({
@@ -14,20 +15,34 @@ import { Image } from '../../image.model';
   styleUrls: ['./grid-gallery-item.component.scss'],
 })
 export class GridGalleryItemComponent {
-  @Input() image: Image;
   @Input() rowHeight: number = 1;
   @Input() gutterSize: number = 1;
-  @ViewChild('img') img: ElementRef;
+  @ViewChild('block') block: ElementRef;
 
-  public rows: number = 0;
+  constructor(
+    @Host() private matGrid: MatGridTile,
+    private ref: ChangeDetectorRef
+  ) {}
 
-  constructor(private elementRef: ElementRef) {}
+  ngAfterViewInit() {
+    const resizeObserver = new ResizeObserver((entries) => {
+      console.log('Size changed');
 
-  @HostListener('window:resize')
-  calculateRows() {
-    this.rows = Math.floor(
-      this.elementRef.nativeElement.offsetHeight /
-        (this.rowHeight + this.gutterSize)
-    );
+      if (this.block.nativeElement && this.rowHeight + this.gutterSize) {
+        this.matGrid.rowspan = Math.floor(
+          this.block.nativeElement.offsetHeight /
+            (this.rowHeight + this.gutterSize)
+        );
+        this.ref.detectChanges();
+      }
+
+      console.log(
+        this.block.nativeElement.offsetHeight,
+        this.rowHeight + this.gutterSize,
+        this.matGrid.rowspan
+      );
+    });
+
+    resizeObserver.observe(this.block.nativeElement);
   }
 }

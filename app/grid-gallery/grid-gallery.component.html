@@ -1,17 +1,12 @@
-<mat-grid-list [cols]="cols"
-               [rowHeight]="rowHeight"
-               [gutterSize]="gutterSize+'px'">
-
-  <mat-grid-tile *ngFor="let imageItem of images"
-                 [rowspan]="item.rows">
-
-    <!-- Grid image item --> 
-    <app-grid-gallery-item  #item 
-                            [image]="imageItem" 
-                            [rowHeight]="rowHeight" 
-                            [gutterSize]="gutterSize">
+<mat-grid-list
+  [cols]="cols"
+  [rowHeight]="rowHeight"
+  [gutterSize]="gutterSize + 'px'"
+>
+  <mat-grid-tile *ngFor="let imageItem of images">
+    <!-- Grid image item -->
+    <app-grid-gallery-item [rowHeight]="rowHeight" [gutterSize]="gutterSize">
+      <img [src]="imageItem?.src" [alt]="imageItem?.alt" />
     </app-grid-gallery-item>
-
   </mat-grid-tile>
-
 </mat-grid-list>
