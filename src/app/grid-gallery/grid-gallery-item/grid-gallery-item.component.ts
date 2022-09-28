@@ -1,13 +1,5 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-} from '@angular/core';
-import { MatGridTile } from '@angular/material/grid-list';
+import { Component, ElementRef, Input } from '@angular/core';
+import { MatGridList, MatGridTile } from '@angular/material/grid-list';
 
 
 @Component({
@@ -18,29 +10,33 @@ import { MatGridTile } from '@angular/material/grid-list';
 export class GridGalleryItemComponent {
   @Input() rowHeight: number = 1;
   @Input() gutterSize: number = 1;
-  @Input() matGrid!: MatGridTile;
-  @Output() updateSize = new EventEmitter<void>();
-  @ViewChild('block') block!: ElementRef;
+  @Input() matGridTile!: MatGridTile;
+  @Input() matGridList!: MatGridList;
 
-  constructor(private ref: ChangeDetectorRef) {}
+  constructor(private ref: ElementRef) {}
 
   ngAfterViewInit() {
     const resizeObserver = new ResizeObserver((entries) => {
-      console.log('Size changed');
+      if (this.matGridList.gutterSize !== `${this.rowHeight}px`) {
+        this.matGridList.gutterSize = `${this.rowHeight}px`;
+      }
+      if (this.matGridList.rowHeight !== this.rowHeight) {
+        this.matGridList.rowHeight = this.rowHeight;
+      }
 
       if (
-        this.matGrid &&
-        this.block.nativeElement &&
+        this.matGridTile &&
+        this.ref.nativeElement &&
         this.rowHeight + this.gutterSize
       ) {
-        this.matGrid.rowspan = Math.floor(
-          this.block.nativeElement.offsetHeight /
+        this.matGridTile.rowspan = Math.floor(
+          this.ref.nativeElement.offsetHeight /
             (this.rowHeight + this.gutterSize)
         );
-        this.updateSize.emit();
+        this.matGridList.ngAfterContentChecked();
       }
     });
 
-    resizeObserver.observe(this.block.nativeElement);
+    resizeObserver.observe(this.ref.nativeElement);
   }
 }
