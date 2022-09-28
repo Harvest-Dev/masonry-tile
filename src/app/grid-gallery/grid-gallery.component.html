@@ -1,7 +1,7 @@
 <mat-grid-list #matGridList [cols]="cols">
   <mat-grid-tile *ngFor="let imageItem of images" #matGridTile>
     <!-- Grid of items -->
-    <app-grid-gallery-item
+    <masonry-tile
       [rowHeight]="rowHeight"
       [gutterSize]="gutterSize"
       [matGridTile]="matGridTile"
@@ -9,6 +9,6 @@
     >
       <img [src]="imageItem?.src" [alt]="imageItem?.alt" />
       <div>{{ imageItem?.alt }}</div>
-    </app-grid-gallery-item>
+    </masonry-tile>
   </mat-grid-tile>
 </mat-grid-list>

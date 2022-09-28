@@ -3,11 +3,10 @@ import { MatGridList, MatGridTile } from '@angular/material/grid-list';
 
 
 @Component({
-  selector: 'app-grid-gallery-item',
-  templateUrl: './grid-gallery-item.component.html',
-  styleUrls: ['./grid-gallery-item.component.scss'],
+  selector: 'masonry-tile',
+  template: '<ng-content></ng-content>',
 })
-export class GridGalleryItemComponent {
+export class MasonryTileComponent {
   @Input() rowHeight: number = 1;
   @Input() gutterSize: number = 1;
   @Input() matGridTile!: MatGridTile;

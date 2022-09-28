@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { GridGalleryItemComponent } from './grid-gallery/grid-gallery-item/grid-gallery-item.component';
+import { MasonryTileComponent } from './grid-gallery/grid-gallery-item/masonry-tile.component';
 import { GridGalleryComponent } from './grid-gallery/grid-gallery.component';
 
 
@@ -17,7 +17,7 @@ export class MaterialModule {}
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
-  declarations: [AppComponent, GridGalleryComponent, GridGalleryItemComponent],
+  declarations: [AppComponent, GridGalleryComponent, MasonryTileComponent],
   bootstrap: [AppComponent],
   providers: [],
 })
