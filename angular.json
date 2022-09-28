@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "masonry-grid-gallery-responsive-test-cli": {
+    "masonry-tile-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,19 +20,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/masonry-grid-gallery-responsive-test-cli",
+            "outputPath": "dist/masonry-tile-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -72,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "masonry-grid-gallery-responsive-test-cli:build:production"
+              "browserTarget": "masonry-tile-demo:build:production"
             },
             "development": {
-              "browserTarget": "masonry-grid-gallery-responsive-test-cli:build:development"
+              "browserTarget": "masonry-tile-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "masonry-grid-gallery-responsive-test-cli:build"
+            "browserTarget": "masonry-tile-demo:build"
           }
         },
         "test": {
@@ -94,13 +89,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
@@ -138,5 +128,5 @@
       }
     }
   },
-  "defaultProject": "masonry-grid-gallery-responsive-test-cli"
+  "defaultProject": "masonry-tile-demo"
 }

@@ -1,9 +1,16 @@
 {
   "name": "masonry-tile",
-  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Célian Veyssière",
+    "email": "zefling@ikilote.net",
+    "url": "https://celian.eu"
+  },
+  "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0"
+    "@angular/common": ">=13.0.0",
+    "@angular/core": ">=13.0.0",
+    "@angular/material": ">=13.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
