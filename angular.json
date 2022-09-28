@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "masonry-tile": {
+      "projectType": "library",
+      "root": "projects/masonry-tile",
+      "sourceRoot": "projects/masonry-tile/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/masonry-tile/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/masonry-tile/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/masonry-tile/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/masonry-tile/src/test.ts",
+            "tsConfig": "projects/masonry-tile/tsconfig.spec.json",
+            "karmaConfig": "projects/masonry-tile/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "masonry-grid-gallery-responsive-test-cli"

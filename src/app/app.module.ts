@@ -5,8 +5,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MasonryTileModule } from '../../projects/masonry-tile/src/lib/masonry-tile.module';
+
 import { AppComponent } from './app.component';
-import { MasonryTileComponent } from './grid-gallery/grid-gallery-item/masonry-tile.component';
 import { GridGalleryComponent } from './grid-gallery/grid-gallery.component';
 
 
@@ -16,8 +17,13 @@ import { GridGalleryComponent } from './grid-gallery/grid-gallery.component';
 export class MaterialModule {}
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
-  declarations: [AppComponent, GridGalleryComponent, MasonryTileComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MasonryTileModule,
+  ],
+  declarations: [AppComponent, GridGalleryComponent],
   bootstrap: [AppComponent],
   providers: [],
 })
