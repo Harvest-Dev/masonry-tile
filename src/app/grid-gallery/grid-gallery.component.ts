@@ -1,6 +1,10 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-
-import { Subscription } from 'rxjs';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 
 import { Image } from '../image.model';
 
@@ -11,6 +15,9 @@ import { Image } from '../image.model';
   styleUrls: ['./grid-gallery.component.scss'],
 })
 export class GridGalleryComponent implements OnInit, OnDestroy {
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
   @Input() images: Image[] = [];
   @Input() cols: number = 4;
   @Input() cols_xs: number = 1;
@@ -21,17 +28,22 @@ export class GridGalleryComponent implements OnInit, OnDestroy {
   @Input() rowHeight: number = 1;
   @Input() gutterSize: number = 1;
 
-  mediaWatcher!: Subscription;
-
-  constructor() {}
-
   ngOnInit() {
-    // this.mediaWatcher = this.media.asObservable().subscribe((change) => {
-    //   this.cols = (this as any)[`cols_${change[0].mqAlias}`];
-    // });
+    this.onResize();
   }
 
-  ngOnDestroy(): void {
-    this.mediaWatcher.unsubscribe();
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth < 600) {
+      this.cols = this.cols_xs;
+    } else if (window.innerWidth < 900) {
+      this.cols = this.cols_sm;
+    } else if (window.innerWidth < 1200) {
+      this.cols = this.cols_md;
+    } else if (window.innerWidth < 1536) {
+      this.cols = this.cols_lg;
+    } else {
+      this.cols = this.cols_xl;
+    }
   }
 }
