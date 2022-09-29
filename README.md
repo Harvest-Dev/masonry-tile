@@ -45,6 +45,21 @@ Example with a list of images and description.
 </mat-grid-list>
 ```
 
+Include in your module:
+
+```ts
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MasonryTileModule } from "masonry-tile";
+
+@NgModule({
+  imports: [
+    MatGridListModule, // required
+    MasonryTileModule,
+  ],
+})
+export class MyModule {}
+```
+
 ## Publishing the library
 
 ```
