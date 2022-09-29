@@ -15,7 +15,6 @@ npm i masonry-tile --save
 - peerDependencies:
 
   - `angular` 13.0.0 and more
-  - `angular/cdk` 13.0.0 and more
   - `angular/material` 13.0.0 and more
 
 ## Demo
