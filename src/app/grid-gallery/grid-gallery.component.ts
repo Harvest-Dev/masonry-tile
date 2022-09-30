@@ -1,10 +1,4 @@
-import {
-  Component,
-  HostListener,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 import { Image } from '../image.model';
 
@@ -14,10 +8,7 @@ import { Image } from '../image.model';
   templateUrl: './grid-gallery.component.html',
   styleUrls: ['./grid-gallery.component.scss'],
 })
-export class GridGalleryComponent implements OnInit, OnDestroy {
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
+export class GridGalleryComponent implements OnInit {
   @Input() images: Image[] = [];
   @Input() cols: number = 4;
   @Input() cols_xs: number = 1;

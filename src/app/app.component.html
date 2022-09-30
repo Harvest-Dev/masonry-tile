@@ -10,10 +10,20 @@
 /></a>
 
 <!-- Header -->
-<div>
+<div class="header">
   <button mat-raised-button color="primary" (click)="addImage()">
     ADD IMAGE
   </button>
+
+  <mat-form-field appearance="fill">
+    <mat-label>rowHeight:</mat-label>
+    <input matInput type="number" [(ngModel)]="rowHeight" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>gutterSize:</mat-label>
+    <input matInput type="number" [(ngModel)]="gutterSize" />
+  </mat-form-field>
 </div>
 
 <!-- Gallery -->
@@ -24,5 +34,6 @@
   [cols_md]="3"
   [cols_lg]="4"
   [cols_xl]="6"
->
-</app-grid-gallery>
+  [rowHeight]="rowHeight"
+  [gutterSize]="gutterSize"
+></app-grid-gallery>

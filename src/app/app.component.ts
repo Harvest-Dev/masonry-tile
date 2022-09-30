@@ -12,6 +12,9 @@ export class AppComponent {
   numOfImages = 8;
   images: Image[];
 
+  rowHeight = 1;
+  gutterSize = 1;
+
   constructor() {
     this.images = this.generateImagesList();
   }
