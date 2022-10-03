@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/masonry-tile.svg)](https://badge.fury.io/js/masonry-tile) [![Downloads](https://img.shields.io/npm/dm/masonry-tile.svg)](https://www.npmjs.com/package/masonry-tile) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Harvest-Dev/ng-select2/master/LICENSE.md)
+[![npm version](https://badge.fury.io/js/masonry-tile.svg)](https://badge.fury.io/js/masonry-tile) [![Downloads](https://img.shields.io/npm/dm/masonry-tile.svg)](https://www.npmjs.com/package/masonry-tile) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Harvest-Dev/masonry-tile/master/LICENSE.md)
 
 # Masonry Tile
 
