@@ -26,7 +26,8 @@
     "url": "git+https://github.com/Harvest-Dev/masonry-tile.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.com"
+    "registry": "https://registry.npmjs.com",
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/Harvest-Dev/masonry-tile/issues"

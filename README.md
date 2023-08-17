@@ -67,8 +67,7 @@ export class MyModule {}
 
 ```
 npm run build:lib
-cd dist/masonry-tile
-npm publish
+npm run publish:lib
 ```
 
 ## Update Demo

@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:lib": "ng build masonry-tile --configuration production && cp *.md dist/masonry-tile",
     "build:demo": "ng build --configuration production",
+    "publish:lib": "cd dist/masonry-tile && npm publish ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
