@@ -45,8 +45,8 @@ Example with a list of images and description.
 </mat-grid-list>
 ```
 
-`matGridTile` (Required) : refence to matGridTile
-`matGridList` (Required) : refence to matGridList
+-   `matGridTile` (Required) : reference to matGridTile
+-   `matGridList` (Required) : reference to matGridList
 
 Include in your module:
 
