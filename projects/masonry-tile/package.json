@@ -1,7 +1,7 @@
 {
   "name": "masonry-tile",
-  "version": "1.0.0",
-  "description": "An Angular library for use masonry with Material Grid List ",
+  "version": "1.1.0",
+  "description": "An Angular library for use masonry with Material Grid List",
   "license": "MIT",
   "author": {
     "name": "Célian Veyssière",
@@ -14,9 +14,9 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/common": ">=13.0.0",
-    "@angular/core": ">=13.0.0",
-    "@angular/material": ">=13.0.0"
+    "@angular/common": ">=16.2.0",
+    "@angular/core": ">=16.2.0",
+    "@angular/material": ">=16.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

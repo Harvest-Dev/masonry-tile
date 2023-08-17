@@ -1,39 +1,37 @@
 <a href="https://github.com/Harvest-Dev/masonry-tile"
-  ><img
-    loading="lazy"
-    width="149"
-    height="149"
-    src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149"
-    class="attachment-full size-full"
-    alt="Fork me on GitHub"
-    data-recalc-dims="1"
+    ><img
+        loading="lazy"
+        width="149"
+        height="149"
+        src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149"
+        class="attachment-full size-full"
+        alt="Fork me on GitHub"
+        data-recalc-dims="1"
 /></a>
 
 <!-- Header -->
-<div class="header">
-  <button mat-raised-button color="primary" (click)="addImage()">
-    ADD IMAGE
-  </button>
+<div class="hedader">
+    <button mat-raised-button color="primary" (click)="addImage()">ADD IMAGE</button>
 
-  <mat-form-field appearance="fill">
-    <mat-label>rowHeight:</mat-label>
-    <input matInput type="number" [(ngModel)]="rowHeight" />
-  </mat-form-field>
+    <mat-form-field>
+        <mat-label>rowHeight:</mat-label>
+        <input matInput type="number" [(ngModel)]="rowHeight" />
+    </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>gutterSize:</mat-label>
-    <input matInput type="number" [(ngModel)]="gutterSize" />
-  </mat-form-field>
+    <mat-form-field>
+        <mat-label>gutterSize:</mat-label>
+        <input matInput type="number" [(ngModel)]="gutterSize" />
+    </mat-form-field>
 </div>
 
 <!-- Gallery -->
 <app-grid-gallery
-  [images]="images"
-  [cols_xs]="1"
-  [cols_sm]="2"
-  [cols_md]="3"
-  [cols_lg]="4"
-  [cols_xl]="6"
-  [rowHeight]="rowHeight"
-  [gutterSize]="gutterSize"
+    [images]="images"
+    cols_xs="1"
+    cols_sm="2"
+    cols_md="3"
+    cols_lg="4"
+    cols_xl="6"
+    [rowHeight]="rowHeight"
+    [gutterSize]="gutterSize"
 ></app-grid-gallery>

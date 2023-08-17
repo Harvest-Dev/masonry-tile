@@ -12,10 +12,15 @@ npm i masonry-tile --save
 
 ## Requirements
 
-- peerDependencies:
+-   peerDependencies:
 
-  - `angular` 13.0.0 and more
-  - `angular/material` 13.0.0 and more
+    -   `angular` 16.2.0 and more
+    -   `angular/material` 16.2.0 and more
+
+Use 1.0.0 for:
+
+-   `angular` >=13.0.0
+-   `angular/material` >=13.0.0
 
 ## Demo
 
@@ -29,19 +34,14 @@ Example with a list of images and description.
 
 ```html
 <mat-grid-list #matGridList [cols]="4">
-  <mat-grid-tile *ngFor="let imageItem of images" #matGridTile>
-    <masonry-tile
-      [rowHeight]="1"
-      [gutterSize]="1"
-      [matGridTile]="matGridTile"
-      [matGridList]="matGridList"
-    >
-      <!-- content start -->
-      <img [src]="imageItem?.src" [alt]="imageItem?.alt" />
-      <div>{{ imageItem?.alt }}</div>
-      <!-- content end -->
-    </masonry-tile>
-  </mat-grid-tile>
+    <mat-grid-tile *ngFor="let imageItem of images" #matGridTile>
+        <masonry-tile [rowHeight]="1" [gutterSize]="1" [matGridTile]="matGridTile" [matGridList]="matGridList">
+            <!-- content start -->
+            <img [src]="imageItem?.src" [alt]="imageItem?.alt" />
+            <div>{{ imageItem?.alt }}</div>
+            <!-- content end -->
+        </masonry-tile>
+    </mat-grid-tile>
 </mat-grid-list>
 ```
 
@@ -51,14 +51,14 @@ Example with a list of images and description.
 Include in your module:
 
 ```ts
-import { MatGridListModule } from "@angular/material/grid-list";
-import { MasonryTileModule } from "masonry-tile";
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MasonryTileModule } from 'masonry-tile';
 
 @NgModule({
-  imports: [
-    MatGridListModule, // required
-    MasonryTileModule,
-  ],
+    imports: [
+        MatGridListModule, // required
+        MasonryTileModule,
+    ],
 })
 export class MyModule {}
 ```

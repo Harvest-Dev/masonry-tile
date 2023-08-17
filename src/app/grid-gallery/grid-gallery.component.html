@@ -1,14 +1,14 @@
 <mat-grid-list #matGridList [cols]="cols">
-  <mat-grid-tile *ngFor="let imageItem of images" #matGridTile>
-    <!-- Grid of items -->
-    <masonry-tile
-      [rowHeight]="rowHeight"
-      [gutterSize]="gutterSize"
-      [matGridTile]="matGridTile"
-      [matGridList]="matGridList"
-    >
-      <img [src]="imageItem?.src" [alt]="imageItem?.alt" />
-      <div>{{ imageItem?.alt }}</div>
-    </masonry-tile>
-  </mat-grid-tile>
+    <mat-grid-tile *ngFor="let imageItem of images" #matGridTile>
+        <!-- Grid of items -->
+        <masonry-tile
+            [rowHeight]="rowHeight"
+            [gutterSize]="gutterSize"
+            [matGridTile]="matGridTile"
+            [matGridList]="matGridList"
+        >
+            <img [src]="imageItem?.src" [alt]="imageItem?.alt" />
+            <div>{{ imageItem?.alt }}</div>
+        </masonry-tile>
+    </mat-grid-tile>
 </mat-grid-list>
