@@ -14,17 +14,17 @@ npm i masonry-tile --save
 
 -   peerDependencies:
 
-    -   `angular` 16.2.0 and more
-    -   `angular/material` 16.2.0 and more
+    -   `angular` `18.0.0` and more
+    -   `angular/material` `18.0.0` and more
 
-Use 1.0.0 for:
+Use for older versions:
 
--   `angular` >=13.0.0
--   `angular/material` >=13.0.0
+-   `1.1.0`: `angular` >= `16.0.0` & `angular/material` >= `16.0.0`
+-   `1.0.0`: `angular` >= `13.0.0` & `angular/material` >= `13.0.0`
 
 ## Demo
 
-[See a demo](https://harvest-dev.github.io/masonry-tile/dist/masonry-tile-demo/).
+[See a demo](https://harvest-dev.github.io/masonry-tile/dist/masonry-tile-demo/browser/).
 
 ## Usage
 

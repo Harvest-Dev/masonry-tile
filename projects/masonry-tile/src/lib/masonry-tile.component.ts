@@ -14,7 +14,7 @@ export class MasonryTileComponent {
     constructor(private ref: ElementRef) {}
 
     ngAfterViewInit() {
-        const resizeObserver = new ResizeObserver(entries => {
+        const resizeObserver = new ResizeObserver(_entries => {
             if (this.matGridList.gutterSize !== `${this.rowHeight}px`) {
                 this.matGridList.gutterSize = `${this.rowHeight}px`;
             }
